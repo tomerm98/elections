@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  web:
+    build: web/
+    command: reactor
+    ports:
+      - 8000:8000
+    volumes:
+      - ./web:/opt/web
