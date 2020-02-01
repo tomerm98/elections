@@ -2,8 +2,16 @@ version: "3.7"
 services:
   web:
     build: web/
-    command: reactor
+    command: elm reactor
     ports:
       - 8000:8000
     volumes:
       - ./web:/opt/web
+
+  api:
+    build: api/
+    command: mix phx.server
+    ports:
+      - 4000:4000
+#    volumes:
+#      - ./api:/opt/api
