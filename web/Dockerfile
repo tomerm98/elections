@@ -1,4 +1,4 @@
 FROM codesimple/elm:0.19
 WORKDIR /opt/web
-COPY . .
+COPY web .
 EXPOSE 8000

@@ -1,79 +1,56 @@
 module Main exposing (..)
 
 import Browser
-import Html exposing (..)
-import Html.Events exposing (..)
-import Random
+import Html exposing (Html, text, div, h1, img)
+import Html.Attributes exposing (src)
 
 
-
--- MAIN
-
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
-
-
-
--- MODEL
+---- MODEL ----
 
 
 type alias Model =
-    Int
+    {}
 
 
-init : () -> ( Model, Cmd Msg )
-init _ =
-    ( 1
-    , Cmd.none
-    )
+init : ( Model, Cmd Msg )
+init =
+    ( {}, Cmd.none )
 
 
 
--- UPDATE
+---- UPDATE ----
 
 
 type Msg
-    = Roll
-    | NewFace Int
+    = NoOp
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case msg of
-        Roll ->
-            ( model
-            , Random.generate NewFace (Random.int 1 6)
-            )
-
-        NewFace newFace ->
-            ( newFace
-            , Cmd.none
-            )
+    ( model, Cmd.none )
 
 
 
--- SUBSCRIPTIONS
-
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
-
-
-
--- VIEW
+---- VIEW ----
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ h1 [] [ text (String.fromInt model) ]
-        , button [ onClick Roll ] [ text "Roll" ]
+        [ img [ src "/logo.svg" ] []
+        , h1 [] [ text "Your Elm App is working!" ]
         ]
+
+
+
+---- PROGRAM ----
+
+
+main : Program () Model Msg
+main =
+    Browser.element
+        { view = view
+        , init = \_ -> init
+        , update = update
+        , subscriptions = always Sub.none
+        }
