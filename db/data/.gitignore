@@ -1,0 +1,4 @@
+# This directory is used to store neo4j data (should be mounted to the db container)
+*
+# Ignore everything in this directory except this file
+!.gitignore

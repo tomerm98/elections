@@ -48,8 +48,4 @@ api/elections-*.tar
 api/priv
 
 
-# - DB -
-
-db/data
-
 .idea/
