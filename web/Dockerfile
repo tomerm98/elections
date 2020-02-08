@@ -1,5 +1,4 @@
-FROM codesimple/elm:0.19
+FROM tomerm98/elm-app
 WORKDIR /opt/web
 COPY . .
-ENTRYPOINT []
-EXPOSE 8000
+EXPOSE 3000

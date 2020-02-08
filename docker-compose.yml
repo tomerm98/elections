@@ -2,9 +2,9 @@ version: "3.7"
 services:
   web:
     build: web/
-    command: elm reactor
+    command: start
     ports:
-      - 8000:8000
+      - 3000:3000
     volumes:
       - ./web:/opt/web
 
