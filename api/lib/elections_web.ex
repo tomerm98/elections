@@ -1,12 +1,12 @@
-defmodule ApiWeb do
+defmodule ElectionsWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use ApiWeb, :controller
-      use ApiWeb, :view
+      use ElectionsWeb, :controller
+      use ElectionsWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,29 +19,26 @@ defmodule ApiWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: ApiWeb
+      use Phoenix.Controller, namespace: ElectionsWeb
 
       import Plug.Conn
-      import ApiWeb.Gettext
-      alias ApiWeb.Router.Helpers, as: Routes
+      import ElectionsWeb.Gettext
+      alias ElectionsWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/api_web/templates",
-        namespace: ApiWeb
+        root: "lib/elections_web/templates",
+        namespace: ElectionsWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
 
-      # Use all HTML functionality (forms, tags, etc)
-      use Phoenix.HTML
-
-      import ApiWeb.ErrorHelpers
-      import ApiWeb.Gettext
-      alias ApiWeb.Router.Helpers, as: Routes
+      import ElectionsWeb.ErrorHelpers
+      import ElectionsWeb.Gettext
+      alias ElectionsWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -56,7 +53,7 @@ defmodule ApiWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import ApiWeb.Gettext
+      import ElectionsWeb.Gettext
     end
   end
 

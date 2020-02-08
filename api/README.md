@@ -1,4 +1,4 @@
-# Api
+# Elections
 
 To start your Phoenix server:
 

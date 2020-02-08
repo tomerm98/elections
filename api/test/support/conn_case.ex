@@ -1,4 +1,4 @@
-defmodule ApiWeb.ConnCase do
+defmodule ElectionsWeb.ConnCase do
   @moduledoc """
   This module defines the test case to be used by
   tests that require setting up a connection.
@@ -11,7 +11,7 @@ defmodule ApiWeb.ConnCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use ApiWeb.ConnCase, async: true`, although
+  by setting `use ElectionsWeb.ConnCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,10 +21,10 @@ defmodule ApiWeb.ConnCase do
     quote do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
-      alias ApiWeb.Router.Helpers, as: Routes
+      alias ElectionsWeb.Router.Helpers, as: Routes
 
       # The default endpoint for testing
-      @endpoint ApiWeb.Endpoint
+      @endpoint ElectionsWeb.Endpoint
     end
   end
 

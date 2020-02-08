@@ -8,11 +8,11 @@
 use Mix.Config
 
 # Configures the endpoint
-config :api, ApiWeb.Endpoint,
+config :elections, ElectionsWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "AdAuW/Tg+vMKlF+jQI4ZtTITWLWHwpndsPQulBSA0MEQSHofuktX7WKsWOVcYKHP",
-  render_errors: [view: ApiWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Api.PubSub, adapter: Phoenix.PubSub.PG2]
+  secret_key_base: "xbVYwfBH2jHIiPYrVo9NCtZF0lQweB6sCcDWVqdKuz4+82e/bZ8QcGZmM3OQUkMJ",
+  render_errors: [view: ElectionsWeb.ErrorView, accepts: ~w(json)],
+  pubsub: [name: Elections.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

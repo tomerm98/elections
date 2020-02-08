@@ -1,6 +1,6 @@
-defmodule Api do
+defmodule Elections do
   @moduledoc """
-  Api keeps the contexts that define your domain
+  Elections keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

@@ -1,4 +1,4 @@
-defmodule Api.Application do
+defmodule Elections.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,21 +9,21 @@ defmodule Api.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      ApiWeb.Endpoint
-      # Starts a worker by calling: Api.Worker.start_link(arg)
-      # {Api.Worker, arg},
+      ElectionsWeb.Endpoint
+      # Starts a worker by calling: Elections.Worker.start_link(arg)
+      # {Elections.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: Api.Supervisor]
+    opts = [strategy: :one_for_one, name: Elections.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ApiWeb.Endpoint.config_change(changed, removed)
+    ElectionsWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end
