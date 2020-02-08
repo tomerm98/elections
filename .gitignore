@@ -1,5 +1,45 @@
+# Distribution
+build/
+
 # elm-package generated files
 elm-stuff
+
 # elm-repl generated files
 repl-temp-*
+
+# Dependency directories
+node_modules
+
+# Desktop Services Store on macOS
+.DS_Store
+
+# The directory Mix will write compiled artifacts to.
+api/_build/
+
+# If you run "mix test --cover", coverage assets end up here.
+api/cover/
+
+# The directory Mix downloads your dependencies sources to.
+api/deps/
+
+# Where 3rd-party dependencies like ExDoc output generated docs.
+api/doc/
+
+# Ignore .fetch files in case you like to edit your project deps locally.
+api/.fetch
+
+# If the VM crashes, it generates a dump, let's ignore it too.
+erl_crash.dump
+
+# Also ignore archive artifacts (built via "mix archive.build").
+*.ez
+
+# Ignore package tarball (built via "mix hex.build").
+elections-*.tar
+
+# Since we are building assets from assets/,
+# we ignore priv/static. You may want to comment
+# this depending on your deployment strategy.
+/priv/static/
+
 .idea/
