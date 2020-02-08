@@ -8,10 +8,18 @@ services:
     volumes:
       - ./web:/opt/web
 
+  db:
+    build: db/
+    ports:
+      - 7474:7474
+      - 7687:7687
+    volumes:
+      - ./db/data:/data
+
   api:
     build: api/
     command: mix phx.server
     ports:
       - 4000:4000
-#    volumes:
-#      - ./api:/opt/api
+    volumes:
+      - ./api:/opt/api
