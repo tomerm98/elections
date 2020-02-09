@@ -9,9 +9,12 @@ defmodule Elections.Application do
     # List all child processes to be supervised
     children = [
       # Start the endpoint when the application starts
-      ElectionsWeb.Endpoint
+      ElectionsWeb.Endpoint,
       # Starts a worker by calling: Elections.Worker.start_link(arg)
       # {Elections.Worker, arg},
+
+      # Start the Neo4j DB Connection
+      {Bolt.Sips, Application.get_env(:bolt_sips, Bolt)}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

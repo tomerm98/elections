@@ -36,7 +36,8 @@ defmodule Elections.MixProject do
       {:phoenix_pubsub, "~> 1.1"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:bolt_sips, "~> 2.0"}
     ]
   end
 end
